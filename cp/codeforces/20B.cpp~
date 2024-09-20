@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+	double a, b ,c;
+	int total = 0;
+	cin >> a >> b >> c;
+	double det = b*b-4*a*c;
+
+
+	if(det < 0) {cout << -1; return 0;}
+	if(a >= -0.000001 && a <= 0.000001 ) {cout << 0; return 0;}
+	
+
+	total = (det==0) ? 1 : 2; 
+	cout << total << "\n";
+
+	while(total--){
+		det *= -1;
+		cout <<  (-1*b + det)/2*a << "\n";
+	}
+}
